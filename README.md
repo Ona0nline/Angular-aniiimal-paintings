@@ -11,7 +11,8 @@ Run `ng serve -o` for a dev server. Navigate to `http://localhost:4200/`. The ap
 Check out their documentation below to learn more:
 https://mockoon.com/
 
-Once you have it installed on your system, import the JSON file included here.
-[Mockoon environment JSON](./Amazing%20Animal%20Paintings.json)
+Once you have it installed on your system, import the JSON file (included here.
+[Mockoon environment JSON](./Amazing%20Animal%20Paintings.json) ) as an enviroment on Mockoon. (Open enviroment then import the downloaded JSON file. DO NOT MAKE A NEW ENVIROMENT)
+Hope you like it <3
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
