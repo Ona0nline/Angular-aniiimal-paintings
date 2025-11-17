@@ -3,8 +3,13 @@
 
   <h2>Our latest collection</h2>
 
+  <mat-form-field>
+    <!-- whenever we release a key -->
+    <input matInput (keyup)="applyFilter($event)" placeholder="search">
+  </mat-form-field>
+
   <div fxLayout="row wrap" fxLayoutGap="50px grid">
-    <div *ngFor="let product of products">
+    <div *ngFor="let product of filteredProducts">
       <mat-card class="product-card" (click)="addToCart(product)">
         <img mat-card-image src="assets/images/{{product.image_url}}">
         <mat-card-content> <mat-card-title>{{product.name}}</mat-card-title>

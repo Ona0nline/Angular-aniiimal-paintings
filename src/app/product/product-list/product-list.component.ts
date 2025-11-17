@@ -4,15 +4,18 @@ import { OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product';
 import { CartService } from 'src/app/cart/cart.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { validateHorizontalPosition } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
+
 export class ProductListComponent implements OnInit {
   
   products: Product[] = []
+  filteredProducts: Product[] = []
   // Remember constructors == dependency injection
   constructor(private productService: ProductService, 
     private cartService: CartService,
@@ -27,6 +30,7 @@ export class ProductListComponent implements OnInit {
     this.productService.getProducts().subscribe(data => {
       // Mapping the data that we have fetched from response to products list
       this.products = data;
+      this.filteredProducts = data;
     })
   }
 
@@ -34,9 +38,24 @@ export class ProductListComponent implements OnInit {
   addToCart(product: Product) : void{
     this.cartService.addToCart(product).subscribe({
       next: () => {
-        this.snackBar.open("Added to cart")
+        // Empty space for placeholder for action ie. undo
+        this.snackBar.open("Product added to cart!", "", {
+          // Creating new object for configuration
+          duration: 2000,
+          horizontalPosition: 'right',
+          verticalPosition: 'top'
+        })
       }
     })
+  }
+
+  applyFilter(event: Event) : void{
+    let searchTerm = (event.target as HTMLInputElement).value;
+    searchTerm = searchTerm.toLowerCase()
+
+    this.filteredProducts = this.products.filter(
+        product => product.name.toLowerCase().includes(searchTerm)
+    )
   }
 
 
