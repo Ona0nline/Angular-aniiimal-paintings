@@ -18,3 +18,12 @@ body { margin: 0;
   max-width: 800px;
   margin: auto;
 }
+
+.text-center{
+    text-align: center;
+}
+
+.text-right{
+  text-align: right;
+}
+
