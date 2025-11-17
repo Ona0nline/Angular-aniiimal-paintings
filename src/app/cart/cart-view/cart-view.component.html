@@ -1,1 +1,12 @@
-<p>cart-view works!</p>
+<div class="container-small">
+    <h1>Your cart</h1>
+
+    <mat-card>
+        <mat-list>
+            <mat-list-item *ngFor="let item of cartItems">
+                <span matListItemTitle>{{item.name}}</span>
+                <span matListItemLine>{{item.price | currency: 'ZAR'}}></span>
+            </mat-list-item>
+        </mat-list>
+    </mat-card>
+</div>
