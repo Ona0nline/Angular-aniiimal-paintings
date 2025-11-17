@@ -16,7 +16,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatCardModule,
     FlexModule,
     MatSnackBarModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule
   ]
 })
 export class ProductModule { }
