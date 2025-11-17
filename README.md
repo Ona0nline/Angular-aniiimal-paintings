@@ -12,5 +12,6 @@ Check out their documentation below to learn more:
 https://mockoon.com/
 
 Once you have it installed on your system, import the JSON file included here.
-[Mockoon enviroment JSON](./Amazing Animal Paintings.json)
+[Mockoon environment JSON](./Amazing%20Animal%20Paintings.json)
+
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
